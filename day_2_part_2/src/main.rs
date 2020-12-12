@@ -19,8 +19,17 @@ impl Password {
     }
 
     fn valid(&self) -> bool {
-        let count = self.content.matches(self.character).count();
-        count >= self.minimum as usize && count <= self.maximum as usize
+        let cont = |num: i32| -> bool {
+            return self.content.chars().nth(num as usize - 1).unwrap() == self.character;
+        };
+
+        if cont(self.minimum) && !cont(self.maximum) {
+            return true;
+        } else if cont(self.maximum) && !cont(self.minimum) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
 

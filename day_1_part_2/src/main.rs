@@ -1,7 +1,7 @@
 use std::io::Read;
 
 fn main() {
-    let mut file = std::fs::File::open("inputs/day_1_part_2.txt").unwrap();
+    let mut file = std::fs::File::open("inputs/day_1.txt").unwrap();
     let mut content = String::new();
     file.read_to_string(&mut content).unwrap();
     let my_vec: Vec<i32> = content.lines().map(|s| s.parse().unwrap()).collect();
