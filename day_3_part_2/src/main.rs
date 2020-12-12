@@ -131,7 +131,14 @@ fn main() {
     file.read_to_string(&mut content).unwrap();
 
     let mut world = World::new(Player::new(Position::new(0, 0)), Terrain::new(&content));
-    let tree_count = world.trees_to_encounter(&vec![Movement::Right(3), Movement::Down(1)]);
 
-    println!("{}", tree_count);
+    let trees_1 = world.trees_to_encounter(&vec![Movement::Right(1), Movement::Down(1)]);
+    let trees_2 = world.trees_to_encounter(&vec![Movement::Right(3), Movement::Down(1)]);
+    let trees_3 = world.trees_to_encounter(&vec![Movement::Right(5), Movement::Down(1)]);
+    let trees_4 = world.trees_to_encounter(&vec![Movement::Right(7), Movement::Down(1)]);
+    let trees_5 = world.trees_to_encounter(&vec![Movement::Right(1), Movement::Down(2)]);
+
+    let total_tree_count =
+        trees_1 as i64 * trees_2 as i64 * trees_3 as i64 * trees_4 as i64 * trees_5 as i64;
+    println!("{}", total_tree_count);
 }

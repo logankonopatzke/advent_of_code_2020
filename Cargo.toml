@@ -6,4 +6,5 @@ members = [
     "day_2",
     "day_2_part_2",
     "day_3",
+    "day_3_part_2",
 ]
