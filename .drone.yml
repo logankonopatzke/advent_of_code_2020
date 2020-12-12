@@ -10,4 +10,5 @@ steps:
   - name: test
     image: rust
     commands:
-      - cargo build --verbose --workspace
+      - cargo build --verbose
+      - cargo test --verbose
